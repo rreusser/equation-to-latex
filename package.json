@@ -24,7 +24,6 @@
     "tape": "^4.0.1"
   },
   "dependencies": {
-    "app-root-path": "^1.0.0",
     "handlebars": "^3.0.3",
     "util-extend": "^1.0.1"
   }
