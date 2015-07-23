@@ -3,10 +3,16 @@
 var test = require('tape')
   , wrap = require('../lib')
 
-
 test('inserts the equation',function(t) {
   var re = /x\+y/m
   t.assert( re.test(wrap('x+y')), 'Contains the equation')
+  t.end()
+})
+
+test("ampersands don't get escaped improperly",function(t) {
+  var wrapped = wrap('\\begin{array}{cc} x & y \\end{array}')
+  var re = /\\begin\{array\}\{cc\} x & y \\end\{array\}/
+  t.assert( re.test(wrapped), 'Contains the equation')
   t.end()
 })
 

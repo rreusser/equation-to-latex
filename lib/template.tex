@@ -1,9 +1,9 @@
-\documentclass[{{fontSize}}]{standalone}
+\documentclass[{{{fontSize}}}]{standalone}
 \usepackage{adjustbox}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 {{#each usepackages}}
-\usepackage{ {{package}} }
+\usepackage{ {{{package}}} }
 {{/each}}
 
 \usepackage{amsmath, amssymb, graphics, setspace}
@@ -11,5 +11,5 @@
 \newcommand{\unicode}[1]\{{}}
 
 \begin{document}
-  \begin{adjustbox}{margin={{margin}} }${{#if display}}\displaystyle{{/if}} {{rawTex}}$\end{adjustbox}
+  \begin{adjustbox}{margin={{{margin}}} }${{#if display}}\displaystyle{{/if}} {{{rawTex}}}$\end{adjustbox}
 \end{document}
