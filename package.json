@@ -1,10 +1,10 @@
 {
   "name": "equation-to-latex",
   "version": "1.0.0",
-  "description": "Generate a latex document for a single equation or set of equations",
+  "description": "Generate a latex document for a single equation",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "node test/test.js | tap-spec",
     "example": "cd example && node example.js && pdflatex example.tex"
   },
   "repository": {
