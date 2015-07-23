@@ -12,7 +12,10 @@
     "url": "git://github.com/equations-io-equation-to-latex"
   },
   "keywords": [
-    "scijs"
+    "latex",
+    "equation",
+    "math",
+    "mathmode"
   ],
   "author": "Ricky Reusser",
   "license": "MIT",
