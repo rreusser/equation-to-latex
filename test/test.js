@@ -1,19 +1,35 @@
 'use strict'
 
-var assert = require('chai').assert,
-    compile = require('../lib')
+var test = require('tape')
+  , wrap = require('../lib')
 
 
-describe( "generate-tex", function() {
+test('templator: inserts the equation',function(t) {
+  var re = /x\+y/m
+  t.assert( re.test(wrap('x+y')), 'Contains the equation')
+  t.end()
+})
 
-  it("inserts the equation",function() {
-    var re = /x\+y/m
-    assert( re.test(compile('x+y')), 'Contains the equation')
-  })
+test('templator: sets the font size',function(t) {
+  var re = /10pt/m
+  t.assert( re.test(wrap('x+y', {fontSize: '10pt'})), 'Contains the font size')
+  t.end()
+})
 
-  it("sets the font size",function() {
-    var re = /14pt/m
-    assert( re.test(compile('x+y', {fontSize: 14})), 'Contains the font size')
-  })
+test('templator: sets the margin',function(t) {
+  var re = /12345pt/m
+  t.assert( re.test(wrap('x+y', {margin: '12345pt'})), 'sets the margin')
+  t.end()
+})
 
+test('templator: sets displaystyle=false',function(t) {
+  var re = /\\displaystyle/m
+  t.assert( ! re.test(wrap('x+y',{display:false})), 'sets displaystyle=false')
+  t.end()
+})
+
+test('templator: sets displaystyle=true',function(t) {
+  var re = /\\displaystyle/m
+  t.assert( re.test(wrap('x+y',{display:true})), 'sets displaystyle=false')
+  t.end()
 })

@@ -1,5 +1,5 @@
-\documentclass[{{fontSize}}pt]{standalone}
-\usepackage{varwidth}
+\documentclass[{{fontSize}}]{standalone}
+\usepackage{adjustbox}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 
@@ -8,9 +8,5 @@
 \newcommand{\unicode}[1]\{{}}
 
 \begin{document}
-   \begin{varwidth}{50in}
-        \begin{equation*}
-            {{rawTex}}
-        \end{equation*}
-    \end{varwidth}
+  \begin{adjustbox}{margin={{margin}} }${{#if display}}\displaystyle{{/if}} {{rawTex}}$\end{adjustbox}
 \end{document}

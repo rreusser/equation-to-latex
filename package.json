@@ -1,14 +1,15 @@
 {
-  "name": "generate-tex",
+  "name": "equation-to-latex",
   "version": "1.0.0",
-  "description": "Generate a tex document for a single equation or set of equations",
+  "description": "Generate a latex document for a single equation or set of equations",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "example": "cd example && node example.js && pdflatex example.tex"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/equations-io-generate-tex"
+    "url": "git://github.com/equations-io-equation-to-latex"
   },
   "keywords": [
     "scijs"
@@ -16,13 +17,12 @@
   "author": "Ricky Reusser",
   "license": "MIT",
   "devDependencies": {
-    "chai": "^3.0.0",
-    "mocha": "^2.2.5"
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.1"
   },
   "dependencies": {
     "app-root-path": "^1.0.0",
     "handlebars": "^3.0.3",
-    "hogan.js": "^3.0.2",
     "util-extend": "^1.0.1"
   }
 }
