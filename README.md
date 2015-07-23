@@ -7,14 +7,14 @@ Generate a tex document for a single equation or set of equations
 
 ## Introduction
 
-An introductory description goes here.
+Insert a single equation into a LaTeX document that renders it.
 
 Sample usage:
 
 ```javascript
-var x = require('equation-to-latex')
+var template = require('equation-to-latex')
 
-x( arg1, arg2 )
+template( tex, {fontSize: '11pt', usepackages: ['extsizes']})
 ```
 
 
@@ -27,13 +27,10 @@ $ npm install equation-to-latex
 
 ## API
 
-### `functionName( arg1, arg2 )`
-A description goes here
+### `require('equation-to-latex')( tex[, options] )`
+Render LaTeX, using any options provided as handlebars variables in the template.
 
-* `arg1` is the first argument
-* `arg2` is the second argument
-
-**Returns** a value
+**Returns** a string containing the rendered template
 
 
 ## Credits

@@ -2,6 +2,9 @@
 \usepackage{adjustbox}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
+{{#each usepackages}}
+\usepackage{ {{package}} }
+{{/each}
 
 \usepackage{amsmath, amssymb, graphics, setspace}
 \newcommand{\mathsym}[1]\

@@ -4,32 +4,39 @@ var test = require('tape')
   , wrap = require('../lib')
 
 
-test('templator: inserts the equation',function(t) {
+test('inserts the equation',function(t) {
   var re = /x\+y/m
   t.assert( re.test(wrap('x+y')), 'Contains the equation')
   t.end()
 })
 
-test('templator: sets the font size',function(t) {
+test('sets the font size',function(t) {
   var re = /10pt/m
   t.assert( re.test(wrap('x+y', {fontSize: '10pt'})), 'Contains the font size')
   t.end()
 })
 
-test('templator: sets the margin',function(t) {
+test('sets the margin',function(t) {
   var re = /12345pt/m
   t.assert( re.test(wrap('x+y', {margin: '12345pt'})), 'sets the margin')
   t.end()
 })
 
-test('templator: sets displaystyle=false',function(t) {
+test('sets displaystyle=false',function(t) {
   var re = /\\displaystyle/m
   t.assert( ! re.test(wrap('x+y',{display:false})), 'sets displaystyle=false')
   t.end()
 })
 
-test('templator: sets displaystyle=true',function(t) {
+test('sets displaystyle=true',function(t) {
   var re = /\\displaystyle/m
   t.assert( re.test(wrap('x+y',{display:true})), 'sets displaystyle=false')
+  t.end()
+})
+
+test('uses packages',function(t) {
+  var result = wrap('x+y',{usepackages: ['package1', 'package2']})
+  t.assert( new RegExp('\\\\usepackage\\{\\s*package1\\s*\\}', 'm').test(result))
+  t.assert( new RegExp('\\\\usepackage\\{\\s*package2\\s*\\}', 'm').test(result))
   t.end()
 })
