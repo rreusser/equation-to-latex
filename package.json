@@ -1,6 +1,6 @@
 {
   "name": "equation-to-latex",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Generate a latex document for a single equation",
   "main": "lib/index.js",
   "scripts": {
