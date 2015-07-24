@@ -1,15 +1,15 @@
-\documentclass[{{{fontSize}}}]{standalone}
-\usepackage{adjustbox}
+\documentclass[preview,margin={{{margin}}}]{standalone}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 {{#each usepackages}}
 \usepackage{ {{{package}}} }
 {{/each}}
-
-\usepackage{amsmath, amssymb, graphics, setspace}
-\newcommand{\mathsym}[1]\{{}}
-\newcommand{\unicode}[1]\{{}}
+\usepackage{amsmath, amssymb, graphics, setspace, varwidth}
+\newcommand{\mathsym}[1]{}
+\newcommand{\unicode}[1]{}
 
 \begin{document}
-  \begin{adjustbox}{margin={{{margin}}} }${{#if display}}\displaystyle{{/if}} {{{rawTex}}}$\end{adjustbox}
+\begin{varwidth}{\linewidth}
+{{#if display}}\begin{equation*} \displaystyle {{/if}}{{#if inline}}\begin{equation*} \textstyle {{/if}} {{{ rawTex }}}{{#if display}}\end{equation*}{{/if}}{{#if inline}}\end{equation*}{{/if}}
+\end{varwidth}
 \end{document}
