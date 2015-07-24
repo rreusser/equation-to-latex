@@ -16,12 +16,6 @@ test("ampersands don't get escaped improperly",function(t) {
   t.end()
 })
 
-test('sets the font size',function(t) {
-  var re = /10pt/m
-  t.assert( re.test(wrap('x+y', {fontSize: '10pt'})), 'Contains the font size')
-  t.end()
-})
-
 test('sets the margin',function(t) {
   var re = /12345pt/m
   t.assert( re.test(wrap('x+y', {margin: '12345pt'})), 'sets the margin')
